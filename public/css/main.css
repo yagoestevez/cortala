@@ -1,0 +1,158 @@
+/* SO MANY THINGS TO FIX HERE */
+
+html {
+  position          : relative;
+  min-height        : 100%;
+}
+body {
+  margin-bottom     : 40px; /* Margin bottom by footer height */
+  background        : #fcfcfc;
+}
+
+.header {
+  line-height       : 1;
+  border-bottom     : 1px solid #e5e5e5;
+}
+
+.header-logo {
+  font-family       : 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size         : 2.25rem;
+}
+
+.header-logo:hover {
+  text-decoration   : none;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family       : 'Playfair Display', Georgia, 'Times New Roman', serif;
+  color             : #333333;
+}
+
+a, a:visited {
+  color             : #37834c;
+}
+
+a:hover, a:active {
+  color             : #37834c;
+}
+
+code {
+  color             : #37834c;
+}
+
+/*
+ *  Main Container
+ */
+.container {
+  width             : auto;
+  max-width         : 960px;
+  padding           : 0 15px;
+}
+
+
+/*
+ *  Footer
+ */
+.footer {
+  position          : fixed;
+  bottom            : 0;
+  width             : 100%;
+  height            : 40px; /* Set the fixed height of the footer here */
+  line-height       : 40px; /* Vertically center the text there */
+  text-align        : center;
+  background-color  : #f0f0f0;
+}
+
+/*
+ *  404
+ */
+.preloader {
+  position          : absolute;
+  background        : #333333;
+  width             : 100%;
+  height            : 100%;
+  display           : flex;
+  justify-content   : center;
+  align-items       : center;
+  z-index           : 100;
+  transition        : opacity 300ms;
+}
+
+  .preloader p {
+    color           : #8ab696;
+    animation       : blink 500ms ease-out alternate infinite;
+  }
+
+  .loaded {
+    opacity         : 0;
+    z-index         : -100;
+  }
+
+  @keyframes blink {
+    from { opacity  : 0; }
+    to   { opacity  : 1; }
+  }
+ 
+h1 {
+  font-family       : 'Playfair Display', Georgia, 'Times New Roman', serif;
+  color             : #333333;
+}
+
+.heading {
+  background        : transparent;
+}
+
+.e404-bg-image {
+  background        : #8ab696 url(https://www.dropbox.com/s/j2ljopz0na00akp/404-background.svg?raw=1) no-repeat center;
+  background-size   : cover;
+  overflow          : hidden;
+}
+
+  .e404-bg-image a, .e404-bg-image a:visited {
+    color           : #333333;
+    text-decoration : underline; 
+  }
+
+  .e404-bg-image a:hover, .e404-bg-image a:active {
+    color           : #111111;
+    text-decoration : none; 
+  }
+
+.e404-silhouettes {
+  position          : fixed;
+  bottom            : 0;
+  height            : 60vh;
+  display           : flex;
+  justify-content   : center;
+  align-items       : flex-end;
+  width             : 100vw;
+  color             : #afcdb7;
+  background        : url(https://www.dropbox.com/s/1omgqp5yyzl2obl/404-silhouettes.svg?raw=1) no-repeat top;
+  background-size   : cover;
+}
+
+.e404-bg-numbers {
+  position          : absolute;
+  top               : 200%;
+  left              : 50%;
+  margin            : 0;
+  padding           : 0;
+  color             : #ffffff50;
+  font-size         : 80vh;
+  line-height       : 1rem;
+  transform         : translate(-50%);
+  z-index           : -1;
+  animation         : show-404 3s ease-out 200ms forwards;
+}
+
+  @keyframes show-404 {
+    from { top: 200%; }
+    to   { top: 20%;  }
+  }
+
+@media only screen and (max-width: 768px) {
+  .e404-bg-numbers {
+    font-size       : 70vw;
+  }
+}

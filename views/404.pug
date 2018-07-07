@@ -1,0 +1,16 @@
+extends _header.pug
+
+//- SO MANY THINGS TO FIX HERE
+block append body
+  body.e404-bg-image
+    .preloader
+      p loading...
+    .container-fluid.text-center.m-0.p-0
+      .jumbotron.jumbotron-fluid.heading
+        h1.display-1 LOST
+        p.lead.mx-5 Sorry. The page you were looking for was not found.
+        p Navigate to the #[a( href="/" ) index].
+      .e404-silhouettes
+      h1.e404-bg-numbers 404
+    script( src="/js/main.js" )
+    include _footer.pug
