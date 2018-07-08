@@ -16,5 +16,9 @@ HINT: to be sure that the submitted url points to a valid site you can use the f
 #### OUTPUT:
 * ```https://forum.freecodecamp.com```
 
+#### EXAMPLE:
+Check a real working example using this API on the following link.
+[https://cortala.glitch.me/example](https://cortala.glitch.me/example)
+
 ---
 [Yago Estévez](https://twitter.com/yagoestevez)
