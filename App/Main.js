@@ -28,7 +28,11 @@ app.use( CORS( corsOptions ) );
 
 /////////////////////////////  DATABASE  /////////////////////////////
 // Sets database handler.
-mongoose.connect( process.env.MONGO_URI, { useNewUrlParser: true } );
+try {
+  mongoose.connect( process.env.MONGO_URI, { useNewUrlParser: true } );
+} catch( error ) {
+  console.log( error );
+}
 
 /////////////////////////////   ROUTES   /////////////////////////////
 app.get( '/', ( req,res ) => {  // Main Index
@@ -39,9 +43,13 @@ app.get( '/api/', ( req,res ) => {  // API Index.
   res.render( 'Index', { api: true } );
 } );
 
-// Main GET route for the API. Redirects to the URL matching the 'url' param or an JSON error.
-app.get(  '/api/shorturl/:url' , getUrlController.getURL  );
-app.post( '/api/shorturl/new'  , postUrlController.postURL );
+// Main routes for working with the API.
+app.get(  '/api/shorturl/:url' , getUrlController.getURL    );
+app.post( '/api/shorturl/new'  , postUrlController.postURL  );
+
+app.get( '/example', ( req,res ) => {  // Live example of using the API.
+  res.render( 'Example' );
+} );
 
 // 404 error: Renders views/404.pug page in case no route matched.
 app.use( ( req,res,next ) => {

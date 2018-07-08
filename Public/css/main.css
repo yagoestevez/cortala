@@ -104,7 +104,7 @@ h1 {
 }
 
 .e404-bg-image {
-  background        : #8ab696 url(https://www.dropbox.com/s/j2ljopz0na00akp/404-background.svg?raw=1) no-repeat center;
+  background        : #8ab696 url(/img/404-background.svg) no-repeat center;
   background-size   : cover;
   overflow          : hidden;
 }
@@ -128,7 +128,7 @@ h1 {
   align-items       : flex-end;
   width             : 100vw;
   color             : #afcdb7;
-  background        : url(https://www.dropbox.com/s/1omgqp5yyzl2obl/404-silhouettes.svg?raw=1) no-repeat top;
+  background        : url(/img/404-silhouettes.svg) no-repeat top;
   background-size   : cover;
 }
 

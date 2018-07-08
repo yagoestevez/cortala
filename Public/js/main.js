@@ -10,7 +10,7 @@ function loadingComplete ( ) {
 
 function preload ( ) {
   silhouettes.onload  = loadingComplete;
-  silhouettes.src     = 'https://www.dropbox.com/s/1omgqp5yyzl2obl/404-silhouettes.svg?raw=1';
+  silhouettes.src     = '/img/404-silhouettes.svg';
 }
 
 window.onload = ( ) => {

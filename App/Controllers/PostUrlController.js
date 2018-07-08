@@ -6,6 +6,8 @@ let newShortRef = Math.random( ).toString( 36 ).substring( 2,10 );
 exports.postURL = ( req,res ) => {
   const URL           = req.body.url;
   const URLRegEx      = /(https?:\/\/)?(www\.)?[\w-@:%._\+~#=]{2,}\.[a-z]{2,6}\b([\w-@:%._\+.~#?&/=]*)/i;
+  const noProtocol    = URL.replace( /^https?\:\/\//i, "" );
+  const domainOnly    = noProtocol.match( /^(?:[^@\/\n]+@)?(?:www\.)?([^:\/\n]+)/i );
   const validURL      = URL.match( URLRegEx );
   const validProtocol = URL.match( /^https?:\/\// );
   const errorMSG      = {
@@ -14,8 +16,7 @@ exports.postURL = ( req,res ) => {
   };
 
   if ( validProtocol && validURL ) {
-    const urlWithoutProtocol = URL.replace(/^https?\:\/\//i, "");
-    DNS.lookup( urlWithoutProtocol, error => {
+    DNS.lookup( domainOnly[0], error => {
       if ( error )  res.json( errorMSG.invalidHost );
       else          checkIfUrlExists( URL,res );
     } );
