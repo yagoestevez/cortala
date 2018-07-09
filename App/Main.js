@@ -27,12 +27,9 @@ const corsOptions = {
 app.use( CORS( corsOptions ) );
 
 /////////////////////////////  DATABASE  /////////////////////////////
-// Sets database handler.
-try {
-  mongoose.connect( process.env.MONGO_URI, { useNewUrlParser: true } );
-} catch( error ) {
-  console.log( error );
-}
+mongoose.connect( process.env.MONGO_URI, { useNewUrlParser: true } )
+  .then( ( ) => console.log( 'Connected to the database' ) )
+  .catch( error => console.error( `Couldn't connect to the database: ${error}` ) );
 
 /////////////////////////////   ROUTES   /////////////////////////////
 app.get( '/', ( req,res ) => {  // Main Index

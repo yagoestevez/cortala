@@ -10,28 +10,28 @@ block append body
 
       main.row.justify-content-md-center
         if api
-          .col-8
+          .col-xs-12.col-md-8
             h2.mt-4 Welcome to the API.
             p.lead  Welcome to the API homepage. Here you will be presented with the neccessary steps 
               | to successfully test the #[em URL shortener microservice].
             p.lead Please, read the following instructions to make use of the API:
-          .col-8.mt-3
+          .col-xs-12.col-md-8.mt-3
             h3 Usage:
             ul
               li Send a POST request to #[code (domain)/api/shorturl/new].
               li You will get a JSON response with a link to the shortener URL. If you copy and paste 
                 | it in your browser, you will be redirected to the original URL.
-          .col-8.mt-3
+          .col-xs-12.col-md-8.mt-3
             h3 Errors:
             p If the input URL doesn't follow the http(s)://www.example.com(/more/routes) format, the 
               | JSON response will have this format: #[code {"error":"invalid URL"}].
-          .col-8.mt-3
+          .col-xs-12.col-md-8.mt-3
             h3 Example:
             p If you want to see this API in action, follow 
-              a( href="https://cortala-fcc-project-3.glitch.me" ) this link 
+              a( href="/example" ) this link 
               | to test a working example using #[em Cortala].
         else
-          .col-8
+          .col-xs-12.col-md-8
             h1.mt-5 Greetings, visitor!
             p.lead  You just arrived to the main page of #[em Cortala], a microservice to shorten 
               | URLs so you can send a shorter link instead of the original one.

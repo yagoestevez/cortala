@@ -5,16 +5,13 @@ html( lang="en" )
     meta( name="viewport", content="width=device-width, initial-scale=1.0" )
     meta( http-equiv="X-UA-Compatible", content="ie=edge" )
     title Córtala. A URL shortener made for freeCodeCamp
-    link( href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet" )
+    link( href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet" )
     link( href="/css/bootstrap-4.1.1.css" rel="stylesheet" )
     link( href="/css/example.css", rel="stylesheet" )
   body.text-center
     .form.flex-element.h-100
-      header.header.py-3
-        h1.header-logo.text-dark Córtala
-        p Another URL shortener
       form#form.form-signin.mb-2( action="/api/shorturl/new" method="POST" )
-        h1.h3.mb-3.font-weight-normal Make it short!
+        h1.h1.font-weight-normal Córtala!
         .form-inline
           input#textInput.col-12.form-control(
             type="text" name="url" placeholder="http(s)://your.link/to/be/shortened"
